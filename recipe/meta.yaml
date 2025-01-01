@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "hklpy2" %}
 {% set version = "0.0.24" %}
 
@@ -6,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hklpy2-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hklpy2-{{ version }}.tar.gz
   sha256: 9b00d0063a180f079975323f91aa40114f2a4ef4534109563112bd283a703724
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
   entry_points:
     - no_op = hklpy2.backends.no_op:NoOpSolver
     - hkl_soleil = hklpy2.backends.hkl_soleil:HklSolver
@@ -20,12 +21,12 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - setuptools-scm >=8
     - setuptools >=64.0
     - pip
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - hkl
     - numpy
     - ophyd
@@ -40,6 +41,7 @@ test:
     - python -c "import hklpy2; assert len(hklpy2.solvers())==3; print(hklpy2.solvers())"
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://prjemian.github.io/hklpy2
