@@ -27,11 +27,13 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
+    - bluesky
     - hkl
     - numpy
     - ophyd
     - packaging
     - pint
+    - ruamel_yaml
 
 test:
   imports:
@@ -40,6 +42,7 @@ test:
     - pip  check
     - python -c "import hklpy2; assert len(hklpy2.solvers())==3; print(hklpy2.solvers())"
   requires:
+    - conda-verify
     - pip
     - python {{ python_min }}
 
