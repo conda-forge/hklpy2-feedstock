@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "hklpy2" %}
-{% set version = "0.0.24" %}
+{% set version = "0.0.25" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hklpy2-{{ version }}.tar.gz
-  sha256: 9b00d0063a180f079975323f91aa40114f2a4ef4534109563112bd283a703724
+  sha256: 531ff3f1cf67b53792c5f15a9b86396f7ed78c55cc4a979196b3d082b9fff233
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
   entry_points:
     - no_op = hklpy2.backends.no_op:NoOpSolver
     - hkl_soleil = hklpy2.backends.hkl_soleil:HklSolver
