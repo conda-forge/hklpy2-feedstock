@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "hklpy2" %}
-{% set version = "0.0.25" %}
+{% set version = "0.0.26" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hklpy2-{{ version }}.tar.gz
-  sha256: 531ff3f1cf67b53792c5f15a9b86396f7ed78c55cc4a979196b3d082b9fff233
+  sha256: 88ef9a9efb2605ad4dea94ce2d443a7f0b1f0478a8c1fb970e4d4702225db0ae
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
