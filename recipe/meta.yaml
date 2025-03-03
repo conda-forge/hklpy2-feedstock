@@ -27,12 +27,14 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
+    - databroker <1.999
     - bluesky
     - hkl
     - numpy
     - ophyd
     - packaging
     - pint
+    - pyRestTable
     - ruamel_yaml
 
 test:
