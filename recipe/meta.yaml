@@ -36,6 +36,7 @@ requirements:
     - pint
     - pyRestTable
     - ruamel.yaml
+    - typeguard
 
 test:
   imports:
@@ -45,9 +46,11 @@ test:
     - pip  check
     - python -c "import hklpy2; assert len(hklpy2.solvers())==3; print(hklpy2.solvers())"
   requires:
+    - bluesky-tiled-plugins
     - conda-verify
     - pip
     - python {{ python_min }}
+    - tiled
 
 about:
   home: https://prjemian.github.io/hklpy2
