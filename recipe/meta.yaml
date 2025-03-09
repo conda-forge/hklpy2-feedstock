@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "hklpy2" %}
-{% set version = "0.0.26" %}
+{% set version = "0.0.27" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hklpy2-{{ version }}.tar.gz
-  sha256: 88ef9a9efb2605ad4dea94ce2d443a7f0b1f0478a8c1fb970e4d4702225db0ae
+  sha256: 7b00a375a2ba786747919da1d7cc922603d47f517e6af6ba99a9cf9d914bed68
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -36,6 +36,7 @@ requirements:
     - pint
     - pyRestTable
     - ruamel.yaml
+    - typeguard
 
 test:
   imports:
@@ -45,9 +46,11 @@ test:
     - pip  check
     - python -c "import hklpy2; assert len(hklpy2.solvers())==3; print(hklpy2.solvers())"
   requires:
+    - bluesky-tiled-plugins
     - conda-verify
     - pip
     - python {{ python_min }}
+    - tiled
 
 about:
   home: https://prjemian.github.io/hklpy2
