@@ -27,15 +27,18 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - databroker <1.999
     - bluesky
+    - bluesky-tiled-plugins
+    - databroker <1.999
     - hkl
     - numpy
     - ophyd
     - packaging
+    - pandas
     - pint
     - pyRestTable
     - ruamel.yaml
+    - tiled
     - typeguard
 
 test:
