@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hklpy2-{{ version }}.tar.gz
-  sha256: 8506a91ffbfd9e0d64785f0689d2ed71ac3c59bc2b25032c306ec22bb911f707
+  sha256: 42638d966deb6b118bbe310f42f3ef71cbaa379d53c6f2793c66cd893e6755c1
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
