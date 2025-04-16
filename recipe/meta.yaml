@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "hklpy2" %}
-{% set version = "0.1.2" %}
+{% set version = "0.1.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hklpy2-{{ version }}.tar.gz
-  sha256: fe1c1e3cdfc72ea4345ee71c1781d96f63b05f00494fc06abc4edf97ec9b2e00
+  sha256: bdd9792b29e698f50144be99899837b7b01c6c15780525437d3766953fba897d
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -58,12 +58,12 @@ test:
     - tiled
 
 about:
-  home: https://prjemian.github.io/hklpy2
-  summary: 2nd generation diffractometer controls for the Bluesky Framework.
+  home: https://blueskyproject.io/hklpy2/
+  summary: 2nd generation controls for diffractometers as PseudoPositioners in the Bluesky Framework.
   license: BSD-4-Clause
   license_file: LICENSE
-  doc_url: https://prjemian.github.io/hklpy2
-  dev_url: https://github.com/prjemian/hklpy2
+  doc_url: https://blueskyproject.io/hklpy2/
+  dev_url: https://github.com/bluesky/hklpy2
 
 extra:
   recipe-maintainers:

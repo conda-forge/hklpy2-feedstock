@@ -3,15 +3,15 @@ About hklpy2-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hklpy2-feedstock/blob/main/LICENSE.txt)
 
-Home: https://prjemian.github.io/hklpy2
+Home: https://blueskyproject.io/hklpy2/
 
 Package license: BSD-4-Clause
 
-Summary: 2nd generation diffractometer controls for the Bluesky Framework.
+Summary: 2nd generation controls for diffractometers as PseudoPositioners in the Bluesky Framework.
 
-Development: https://github.com/prjemian/hklpy2
+Development: https://github.com/bluesky/hklpy2
 
-Documentation: https://prjemian.github.io/hklpy2
+Documentation: https://blueskyproject.io/hklpy2/
 
 Current build status
 ====================
