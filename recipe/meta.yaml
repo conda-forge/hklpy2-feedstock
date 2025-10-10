@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "hklpy2" %}
-{% set version = "0.1.5" %}
+{% set version = "0.2.0rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hklpy2-{{ version }}.tar.gz
-  sha256: 9ba82bd538319c161a5f7f12bafaab3f27d3a8a44fed9412ac59205f8f3d730b
+  sha256: ac587d228441aaf0cb2d228c9714a16b47eb6da04322942012406ce6a23e4806
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -30,6 +30,7 @@ requirements:
     - python >={{ python_min }}
     - bluesky
     - bluesky-tiled-plugins
+    - cytoolz
     - databroker <1.999
     - hkl
     - numpy
