@@ -12,7 +12,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
   entry_points:
     - no_op = hklpy2.backends.no_op:NoOpSolver
     - hkl_soleil = hklpy2.backends.hkl_soleil:HklSolver
@@ -32,7 +32,6 @@ requirements:
     - bluesky-tiled-plugins
     - cytoolz
     - deprecated
-    - hkl
     - numpy
     - ophyd
     - packaging
@@ -43,6 +42,10 @@ requirements:
     - tiled
     - tqdm
     - typeguard
+  extras:
+    - name: hkl_soleil
+      contents:
+        - hkl
 
 test:
   imports:
@@ -50,7 +53,7 @@ test:
     - ruamel.yaml
   commands:
     - pip  check
-    - python -c "import hklpy2; assert len(hklpy2.solvers())==3; print(hklpy2.solvers())"
+    - python -c "import hklpy2; solvers = hklpy2.solvers(); assert len(solvers) in (2, 3); print(solvers)"
   requires:
     - bluesky-tiled-plugins
     - conda-verify
