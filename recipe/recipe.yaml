@@ -1,0 +1,67 @@
+schema_version: 1
+
+context:
+  name: hklpy2
+  version: "0.7.2"
+
+package:
+  name: hklpy2
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: e9c6d4c037b5b01289e55a0f3d72c6efc0be3ecfe6a6c4221e2aa2b55fc5f273
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools >=77.0
+    - setuptools-scm >=8
+  run:
+    - bluesky_tiled_plugins
+    - bluesky-base
+    - cytoolz
+    - deprecated
+    # - hkl  Users must name this separately now to install 
+    - numpy
+    - ophyd
+    - pandas
+    - pint
+    - pyresttable
+    - python >=${{ python_min }}
+    - ruamel.yaml
+    - tiled
+    - tqdm
+    - typeguard
+
+tests:
+  - python:
+      imports:
+        - hklpy2
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+      pip_check: true
+  - script:
+    - python -c "import hklpy2; solvers = hklpy2.solvers(); assert len(solvers) in (2, 3); print(solvers)"
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+
+about:
+  summary: 2nd generation controls for diffractometers as PseudoPositioners in the Bluesky Framework.
+  homepage: https://blueskyproject.io/hklpy2/
+  license: BSD-4-Clause
+  license_file: LICENSE
+  documentation: https://blueskyproject.io/hklpy2/
+  repository: https://github.com/bluesky/hklpy2
+
+extra:
+  recipe-maintainers:
+    - prjemian
