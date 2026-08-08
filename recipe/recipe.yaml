@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: hklpy2
-  version: "0.7.2"
+  version: "0.7.3"
 
 package:
   name: hklpy2
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: e9c6d4c037b5b01289e55a0f3d72c6efc0be3ecfe6a6c4221e2aa2b55fc5f273
+  sha256: f402cf9750419f9cc5fe4b96baeaff7cfb12c5d2781e9bc5201240d8fb31b6b5
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -24,7 +24,7 @@ requirements:
     - setuptools >=77.0
     - setuptools-scm >=8
   run:
-    - bluesky_tiled_plugins
+    - bluesky-tiled-plugins
     - bluesky-base
     - cytoolz
     - deprecated
