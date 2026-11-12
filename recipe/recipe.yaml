@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: hklpy2
-  version: "1.0.0"
+  version: "1.0.1"
 
 package:
   name: hklpy2
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 9bd2332c61b4c262b610b333df36856dfb6b7872dfb221c1369ad734d4437aae
+  sha256: "b176dd68886c555d9470cb71d6e4c3556df174497cf913de252d18cdf54b888e"
 
 build:
   number: 0
@@ -24,13 +24,13 @@ requirements:
     - setuptools >=77.0
     - setuptools-scm >=8
   run:
-    - bluesky-tiled-plugins
+    - bluesky-tiled-plugins >=2.0.12
     - bluesky-base
     - cytoolz
     - deprecated
     # - hkl  Users must name this separately now to install 
     - numpy
-    - ophyd
+    - ophyd >=1.7
     - pandas
     - pint
     - pyresttable
