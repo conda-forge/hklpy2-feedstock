@@ -30,7 +30,7 @@ requirements:
     - deprecated
     # - hkl  Users must name this separately now to install 
     - numpy
-    - ophyd
+    - ophyd >=1.7
     - pandas
     - pint
     - pyresttable
