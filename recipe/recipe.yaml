@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: hklpy2
-  version: "1.0.1rc1"
+  version: "1.0.1rc2"
 
 package:
   name: hklpy2
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: "1ce92648f14333d3463e5648fec4f7ed9a81102da0c81bf0b9b1549cb32aba43"
+  sha256: "a8bd72904430faf07169182ec8560090d8ae79e22d9d5d11540743f163a7f136"
 
 build:
   number: 0
