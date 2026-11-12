@@ -24,7 +24,7 @@ requirements:
     - setuptools >=77.0
     - setuptools-scm >=8
   run:
-    - bluesky-tiled-plugins
+    - bluesky-tiled-plugins >=2.0.12
     - bluesky-base
     - cytoolz
     - deprecated
